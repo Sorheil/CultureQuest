@@ -1,0 +1,66 @@
+"use client"
+
+import { useRouter } from "next/navigation"
+import { motion } from "framer-motion"
+import Image from "next/image"
+
+export default function RegisterOrLogin() {
+  const router = useRouter()
+
+  return (
+    <div className="mobile-container">
+      <motion.div
+        className="flex flex-col items-center justify-center h-[calc(100vh-120px)]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <Image src="/quest-owl.png" alt="CultureQuest Owl" width={150} height={150} className="mb-6" />
+        </motion.div>
+
+        <motion.h1
+          className="text-[#a73c1c] text-4xl font-bold mb-2"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          cultureQuest
+        </motion.h1>
+
+        <motion.p
+          className="text-center text-gray-400 mb-12 px-6"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          Découvrez CultureQuest — là où l&apos;intelligence artificielle rencontre la richesse culturelle et artistique
+          du Cameroun !
+        </motion.p>
+
+        <motion.button
+          className="quest-button mb-4"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          onClick={() => router.push("/intro")}
+        >
+          C&apos;EST PARTI !
+        </motion.button>
+
+        <motion.button
+          className="text-gray-400 underline"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          J&apos;AI DÉJÀ UN COMPTE
+        </motion.button>
+      </motion.div>
+    </div>
+  )
+}

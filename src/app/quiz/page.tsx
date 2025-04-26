@@ -72,7 +72,7 @@ export default function Test() {
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0)
     const [progress, setProgress] = useState(10)
-    const[questions, setQuestions] = useState<Question[]>(LISTOFQUESTIONS)
+    const[questions] = useState<Question[]>(LISTOFQUESTIONS)
     const router = useRouter()
 
     function gotoNextQuestion() {

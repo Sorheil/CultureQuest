@@ -22,12 +22,11 @@ interface Chapter {
 
 export default function Chapters() {
   const router = useRouter()
-  const [activeTab, setActiveTab] = useState("chapitres")
   const [selectedChapter, setSelectedChapter] = useState<string | null>(null)
   const [showLanguageMenu, setShowLanguageMenu] = useState(false)
 
   // État des chapitres
-  const [chapters, setChapters] = useState<Chapter[]>([
+  const [chapters] = useState<Chapter[]>([
     {
       id: "ch1",
       title: "Les bases",

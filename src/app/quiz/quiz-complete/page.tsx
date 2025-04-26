@@ -38,12 +38,12 @@ export default function QuizComplete() {
         </motion.p>
 
         <motion.div
-          className="w-full"
+          className="w-full flex items-center justify-center"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
         >
-          <button className="quest-button" onClick={() => router.push("/")}>
+          <button className="bg-[#a73c1c] text-white py-4 px-12 rounded-full" onClick={() => router.push("/")}>
             CONTINUER
           </button>
         </motion.div>

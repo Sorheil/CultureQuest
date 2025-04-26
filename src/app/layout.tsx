@@ -17,12 +17,12 @@ export default function RootLayout({ children,}: Readonly<{ children: React.Reac
     return (
         <html lang="fr" suppressHydrationWarning>
         <head>
-            <link rel="icon" href="/favicon.ico" sizes="any"/>
-            <link rel="apple-touch-icon" href="/icon-192x192.png"/>
+            <link rel="icon" href="/avatar.png" sizes="any"/>
+            <link rel="apple-touch-icon" href="/avatar.png"/>
         </head>
         <body className={inter.className} >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
-            <main className="flex min-h-screen flex-col items-center justify-between bg-[#121212]">{children}</main>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true} disableTransitionOnChange>
+            <main className="flex min-h-screen flex-col items-center justify-between dark:bg-black bg-white ">{children}</main>
         </ThemeProvider>
         </body>
         </html>

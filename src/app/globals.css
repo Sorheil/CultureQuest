@@ -154,25 +154,6 @@ body {
   font-weight: 500;
 }
 
-.quest-button {
-  background-color: var(--button);
-  color: var(--button-foreground);
-  border-radius: 9999px;
-  font-weight: 700;
-  padding: 16px;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  transition: all 0.2s;
-}
-
-.quest-button:hover {
-  opacity: 0.9;
-}
-
-.quest-button:disabled {
-  opacity: 0.5;
-}
 
 .speech-bubble {
   background-color: rgba(255, 255, 255, 0.1);
@@ -259,25 +240,8 @@ body {
   font-weight: 500;
 }
 
-.quest-button {
-  background-color: var(--button);
-  color: var(--button-foreground);
-  border-radius: 9999px;
-  font-weight: 700;
-  padding: 14px;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  transition: all 0.2s;
-}
 
-.quest-button:hover {
-  opacity: 0.9;
-}
 
-.quest-button:disabled {
-  opacity: 0.5;
-}
 
 .speech-bubble {
   background-color: rgba(255, 255, 255, 0.1);

@@ -71,7 +71,7 @@ export default function TranslationQuiz({currentQuestion , gotoNextQuestion}: {c
                                     ? "border-green-500 bg-green-500 bg-opacity-10"
                                     : quizState === "incorrect" && option.id === selectedOption
                                         ? "border-red-500 bg-red-500 bg-opacity-10"
-                                        : "border-blue-400 bg-blue-500 bg-opacity-10"
+                                        : "border-[#a73c1c] bg-[#a73c1c] bg-opacity-10"
                                 : "border-gray-700"
                         }`}
                         onClick={() => quizState === "question" && handleOptionClick(option.id)}
@@ -102,8 +102,8 @@ export default function TranslationQuiz({currentQuestion , gotoNextQuestion}: {c
             <div className="mb-6">
                 {quizState === "question" ? (
                     <button
-                        className={`w-full py-3 px-4 rounded-full font-bold uppercase ${
-                            selectedOption ? "bg-[#8bc34a] text-black" : "bg-gray-600 text-gray-400"
+                        className={`w-full py-3 px-4  font-bold uppercase text-white rounded-full ${
+                            selectedOption ? "bg-[#a73c1c]" : "bg-[#a73c1c]/75"
                         }`}
                         onClick={handleValidate}
                         disabled={!selectedOption}

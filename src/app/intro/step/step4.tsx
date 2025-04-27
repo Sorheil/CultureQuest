@@ -38,7 +38,7 @@ export default function Step4() {
                 transition={{duration: 0.3}}
             >
                 <button className="bg-[#a73c1c] text-white py-4 px-12 rounded-full"
-                        onClick={() => router.push('/quiz')}>
+                        onClick={() => router.push(`/quiz/?chapterId=default`)}>
                     COMMENCER
                 </button>
             </motion.div>

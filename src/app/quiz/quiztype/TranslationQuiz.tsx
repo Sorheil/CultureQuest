@@ -2,6 +2,7 @@
 import Image from "next/image";
 import {useState} from "react";
 import {CorrectFeedback, IncorrectFeedback} from "@/components/ui/feedback";
+import {Volume2} from "lucide-react";
 
 // Types
 type Option = {
@@ -43,8 +44,22 @@ export default function TranslationQuiz({currentQuestion , gotoNextQuestion}: {c
         gotoNextQuestion();
     }
 
+    function playAudio(){
+        console.log("hey")
+    }
+
     return (
         <>
+            <div className="flex items-center mb-4 bg-[#a73c1c]/50 p-3 rounded-xl">
+                <button
+                    onClick={() => playAudio()}
+                    className="w-10 h-10 rounded-xl bg-[#a73c1c] flex items-center justify-center mr-3"
+                >
+                    <Volume2 size={20} className="text-white" />
+                </button>
+                <span className="text-lg font-medium ">{currentQuestion.word}</span>
+            </div>
+
             {/* Zone personnage + bulle */}
             <div className="flex items-center justify-center mb-4">
                 <div className="relative">
@@ -55,7 +70,7 @@ export default function TranslationQuiz({currentQuestion , gotoNextQuestion}: {c
                         height={100}
                     />
                     <div className="speech-bubble absolute -right-24 top-4">
-                        <span className="text-lg">{currentQuestion.character?.speech}</span>
+                        <span className="text-lg">{currentQuestion.word}</span>
                     </div>
                 </div>
             </div>

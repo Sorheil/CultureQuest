@@ -37,6 +37,18 @@ export type Question = {
 // données
 export const CHAPTERS: Chapter[] = [
     {
+        id: "default",
+        title: "select a color",
+        description: "select a color",
+        level: 1,
+        numberquestion: 5,
+        unlocked: true,
+        questionsFound: 0,
+        completed: true,
+        image: "/image/chapters/ch1/chapter1.jpg",
+        lesson: "lesson1",
+    },
+    {
         id: "ch1",
         title: "Origines ancestrales",
         description: "Les Origines selon la Tradition Bassa",
@@ -247,5 +259,47 @@ export const QUESTIONS: Question[] = [
             { id: "respect", label: "Le respect des ancêtres" },
             { id: "innovation", label: "L'innovation spirituelle" },
         ],
+    },
+    {
+        id: "q14",
+        type: "translation",
+        word: "rouge",
+        chapterId: "default",
+        character:{speech:"",image:"/image/chapters/default/rouge.png"},
+        correctOption: { id: "kòyop", label: "kòyop", image: "/coffee.png" },
+        options: [
+            { id: "kòyop", label: "kòyop", image: "/coffee.png" },
+            { id: "Mbènto ", label: "Mbènto ", image: "/bagel.png" },
+            { id: "Bèngè ", label: "Bèngè ", image: "/croissant.png" },
+            { id: "puba", label: "puba", image: "/tea.png", }
+        ],
+    },
+    {
+        id: "q15",
+        type: "translation",
+        word: "blanc",
+        chapterId: "default",
+        character:{speech:"",image:"/image/chapters/default/white.jpg"},
+        correctOption: { id: "puba", label: "puba", image: "/white.png" },
+        options: [
+            { id: "mbènto", label: "mbènto", image: "/white.png" },
+            { id: "nlànga", label: "nlànga", image: "/dog.png" },
+            { id: "kòyop", label: "kòyop", image: "/bird.png" },
+            { id: "puba", label: "puba", image: "/cat.png" }
+        ]
+    },
+    {
+        id: "q17",
+        type: "translation",
+        word: "black",
+        chapterId: "default",
+        character:{speech:"",image:"/image/chapters/default/black.png"},
+        correctOption: { id: "nlànga", label: "nlànga", image: "/red.png" },
+        options: [
+            { id: "kòyop", label: "kòyop", image: "/red.png" },
+            { id: "mbènto ", label: "mbènto ", image: "/apple.png" },
+            { id: "nlànga", label: "nlànga", image: "/carrot.png" },
+            { id: "puba", label: "puba", image: "/avocado.png" }
+        ]
     }
 ];

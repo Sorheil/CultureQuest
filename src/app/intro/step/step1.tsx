@@ -22,7 +22,7 @@ export default function Step1({ handleNext }: { handleNext: () => void }) {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
                     >
-                        <Image src="/quest-owl.png" alt="CultureQuest Owl" width={120} height={120} className=" mt-4 mb-12" />
+                        <Image src="/avatar-hello.png" alt="CultureQuest Owl" width={120} height={120} className=" mt-4 mb-12" />
                     </motion.div>
                 </motion.div>
             </AnimatePresence>

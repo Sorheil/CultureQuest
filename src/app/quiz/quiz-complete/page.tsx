@@ -34,7 +34,7 @@ export default function QuizComplete() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          Vous avez terminé votre première leçon de langue camerounaise.
+          Vous avez terminé votre première leçon, decouvrez le monde de l&#39;art et de la culture qui se cache derriere cette langue.
         </motion.p>
 
         <motion.div

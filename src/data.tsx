@@ -291,7 +291,7 @@ export const QUESTIONS: Question[] = [
     {
         id: "q17",
         type: "translation",
-        word: "black",
+        word: "noir",
         chapterId: "default",
         character:{speech:"",image:"/image/chapters/default/black.png"},
         correctOption: { id: "nlànga", label: "nlànga", image: "/red.png" },

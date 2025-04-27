@@ -20,7 +20,7 @@ export default function RegisterOrLogin() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <Image src="/quest-owl.png" alt="CultureQuest Owl" width={150} height={150} className="mb-6" />
+          <Image src="/avatar-hello.png" alt="CultureQuest Owl" width={150} height={150} className="mb-6" />
         </motion.div>
 
         <motion.h1
@@ -48,7 +48,7 @@ export default function RegisterOrLogin() {
           transition={{ delay: 0.8, duration: 0.5 }}
           onClick={() => router.push("/intro")}
         >
-          <span>CREER UN COMPTE</span>
+          <span>DECOUVRIR</span>
         </motion.button>
 
         <motion.button

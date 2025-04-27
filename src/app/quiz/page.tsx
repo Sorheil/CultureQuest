@@ -54,7 +54,7 @@ function QuizContent() {
             // Increment the key to force a re-render of the quiz component
             setQuizKey(quizKey + 1)
         } else {
-            router.push("/quiz/quiz-complete")
+            router.push("/quiz/complete")
         }
     }
 

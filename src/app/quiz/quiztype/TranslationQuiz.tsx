@@ -44,15 +44,16 @@ export default function TranslationQuiz({currentQuestion , gotoNextQuestion}: {c
         gotoNextQuestion();
     }
 
-    function playAudio(){
-        console.log("hey")
-    }
+    const playSound = (url:string|undefined) => {
+        const audio = new Audio(url);
+        audio.play();
+    };
 
     return (
         <>
             <div className="flex items-center mb-4 bg-[#a73c1c]/50 p-3 rounded-xl">
                 <button
-                    onClick={() => playAudio()}
+                    onClick={() => playSound(currentQuestion.character?.speech)}
                     className="w-10 h-10 rounded-xl bg-[#a73c1c] flex items-center justify-center mr-3"
                 >
                     <Volume2 size={20} className="text-white" />

@@ -265,7 +265,7 @@ export const QUESTIONS: Question[] = [
         type: "translation",
         word: "rouge",
         chapterId: "default",
-        character:{speech:"",image:"/image/chapters/default/rouge.png"},
+        character:{speech:"/sound/rouge.mp3",image:"/image/chapters/default/rouge.png"},
         correctOption: { id: "kòyop", label: "kòyop", image: "/coffee.png" },
         options: [
             { id: "kòyop", label: "kòyop", image: "/coffee.png" },
@@ -279,7 +279,7 @@ export const QUESTIONS: Question[] = [
         type: "translation",
         word: "blanc",
         chapterId: "default",
-        character:{speech:"",image:"/image/chapters/default/white.jpg"},
+        character:{speech:"/sound/blanc.mp3",image:"/image/chapters/default/white.jpg"},
         correctOption: { id: "puba", label: "puba", image: "/white.png" },
         options: [
             { id: "mbènto", label: "mbènto", image: "/white.png" },
@@ -293,7 +293,7 @@ export const QUESTIONS: Question[] = [
         type: "translation",
         word: "noir",
         chapterId: "default",
-        character:{speech:"",image:"/image/chapters/default/black.png"},
+        character:{speech:"/sound/noir.mp3",image:"/image/chapters/default/black.png"},
         correctOption: { id: "nlànga", label: "nlànga", image: "/red.png" },
         options: [
             { id: "kòyop", label: "kòyop", image: "/red.png" },

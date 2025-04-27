@@ -20,7 +20,7 @@ export default function TopNavigation() {
                         setShowLanguageMenu(!showLanguageMenu)
                     }}
                 >
-                    <Image src="/flag-cm.png" alt="Cameroun" width={28} height={20} className="rounded-md" />
+                    <Image src="/image/profile/profile.jpg" alt="Cameroun" width={28} height={20} className="rounded-md" />
                 </Button>
 
                 <div className="flex items-center">

@@ -41,7 +41,13 @@ export const CHAPTERS: Chapter[] = [
         title: "Origines ancestrales",
         description: "Les Origines selon la Tradition Bassa",
         introduction:
-            "Selon la tradition Bassa, leur ancêtre est sorti de la grotte sacrée appelée Ngok Lituba, berceau des Bassa du Cameroun ainsi que des Bakoko et des Banen...",
+            " l’ancêtre des Bassa est sorti de la grotte appelée « Ngok Lituba ».Berceau des Bassa du Cameroun \n" +
+            "et d’autres groupes dont les Bakoko et les Banen, l’ancêtre commun et ses membres de famille sont \n" +
+            "sortis de la grotte pour migrer dans plusieurs directions. Un groupe a pris la direction sud et \n" +
+            "rencontré le fleuve Sanaga qu’une partie des membres atraversé sur le dos d’un boa, d’après la \n" +
+            "tradition mythique, tandis que les autres sont restés sur place : ce sont les Babimbi. Après la \n" +
+            "traversée de la Sanaga, certains ont pris la direction « est » : c’est le sous-groupe Likôl. Le reste \n" +
+            "s’est dirigé vers la côte : ce sont les Bassa du Wouri.",
         level: 1,
         numberquestion: 5,
         unlocked: true,

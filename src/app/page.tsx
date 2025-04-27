@@ -3,9 +3,7 @@
 import type React from "react"
 
 import {useState} from "react"
-import {useRouter} from "next/navigation"
-import Image from "next/image"
-import {Plus, Flame, Heart,} from "lucide-react"
+
 import Navigation from "@/components/Navigation";
 import ChapterList from "@/components/chapter-list";
 import TopNavigation from "@/components/ui/topNavigation";
@@ -24,9 +22,9 @@ interface Chapter {
 }
 
 export default function Main() {
-    const router = useRouter()
-    const [selectedChapter, setSelectedChapter] = useState<string | null>(null)
-    const [showLanguageMenu, setShowLanguageMenu] = useState(false)
+    // const router = useRouter()
+    // const [selectedChapter, setSelectedChapter] = useState<string | null>(null)
+    // const [showLanguageMenu, setShowLanguageMenu] = useState(false)
 
     // État des chapitres
     const [chapters] = useState<Chapter[]>([

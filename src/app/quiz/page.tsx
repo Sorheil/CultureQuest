@@ -4,6 +4,9 @@ import { useState } from "react"
 import Imagequiz from "@/app/quiz/quiztype/imagequiz"
 import TranslationQuiz from "@/app/quiz/quiztype/TranslationQuiz"
 import { useRouter } from "next/navigation"
+import { useSearchParams } from "next/navigation"
+import { getQuestionsByChapterId } from "@/Helper/chapterAndQuizHelper"
+import CultureQuiz from "@/app/quiz/quiztype/cultureQuiz"
 
 type Option = {
     id: string
@@ -16,61 +19,28 @@ type Character = {
     speech: string
 }
 
-type Question = {
+type Question =
+    | {
     id: string
     type: string
     word: string
+    chapterId: string
     correctOption: Option
     options: Option[]
     character?: Character
 }
+    | undefined
 
-const LISTOFQUESTIONS: Question[] = [
-    {
-        id: "q1",
-        type: "image",
-        word: "tea",
-        correctOption: { id: "the", label: "thé", image: "/tea.png" },
-        options: [
-            { id: "cafe", label: "café", image: "/coffee.png" },
-            { id: "bagel", label: "bagel", image: "/bagel.png" },
-            { id: "croissant", label: "croissant", image: "/croissant.png" },
-            { id: "the", label: "thé", image: "/tea.png" },
-        ],
-    },
-    {
-        id: "q2",
-        type: "image",
-        word: "coffee",
-        correctOption: { id: "cafe", label: "café", image: "/coffee.png" },
-        options: [
-            { id: "bagel", label: "bagel", image: "/bagel.png" },
-            { id: "cafe", label: "café", image: "/coffee.png" },
-            { id: "the", label: "thé", image: "/tea.png" },
-            { id: "croissant", label: "croissant", image: "/croissant.png" },
-        ],
-    },
-    {
-        id: "q3",
-        type: "translation",
-        word: "thé",
-        correctOption: { id: "tea", label: "tea" },
-        options: [
-            { id: "tea", label: "tea" },
-            { id: "coffee", label: "coffee" },
-            { id: "please", label: "please" },
-        ],
-        character: {
-            image: "/character.png",
-            speech: "thé",
-        },
-    },
-]
+export default function Quiz() {
+    const searchParams = useSearchParams()
+    const params = new URLSearchParams(searchParams)
 
-export default function Test() {
+    const ListQuestions = getQuestionsByChapterId(params.get("chapterId"))
+    const [questions] = useState<Question[]>(ListQuestions)
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0)
+
     const [progress, setProgress] = useState(10)
-    const [questions] = useState<Question[]>(LISTOFQUESTIONS)
+
     // Add a key state to force re-render of quiz components
     const [quizKey, setQuizKey] = useState<number>(0)
     const router = useRouter()
@@ -103,15 +73,23 @@ export default function Test() {
 
             {/* Main content - using flex-1 to take remaining space */}
             <div className="px-6 flex-1 flex flex-col justify-between">
-                {questions[currentQuestionIndex].type === "image" && (
+                {questions[currentQuestionIndex]?.type === "image" && (
                     <Imagequiz
                         key={quizKey}
                         currentQuestion={questions[currentQuestionIndex]}
                         gotoNextQuestion={gotoNextQuestion}
                     />
                 )}
-                {questions[currentQuestionIndex].type === "translation" && (
+                {questions[currentQuestionIndex]?.type === "translation" && (
                     <TranslationQuiz
+                        key={quizKey}
+                        currentQuestion={questions[currentQuestionIndex]}
+                        gotoNextQuestion={gotoNextQuestion}
+                    />
+                )}
+
+                {questions[currentQuestionIndex]?.type === "culture" && (
+                    <CultureQuiz
                         key={quizKey}
                         currentQuestion={questions[currentQuestionIndex]}
                         gotoNextQuestion={gotoNextQuestion}

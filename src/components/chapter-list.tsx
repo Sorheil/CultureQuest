@@ -2,30 +2,19 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import {useState} from "react"
 import Image from "next/image"
-import { useRouter } from "next/navigation"
-import {Check, Lock } from "lucide-react"
+import {useRouter} from "next/navigation"
+import {Check, Lock} from "lucide-react"
 
-interface Chapter {
-    id: string
-    title: string
-    description: string
-    level: number
-    lessons: number
-    unlocked: boolean
-    completed: boolean
-    progress: number
-    image: string
-}
-
-export default function ChapterList({ chapters }: { chapters: Chapter[] }) {
+import {Chapter} from "@/data";
+export default function ChapterList({chapters}: { chapters: Chapter[] }) {
     const router = useRouter()
-    const [selectedChapter, setSelectedChapter] = useState<string | null>(null)
 
+    const [selectedChapter, setSelectedChapter] = useState<string | null>(null)
     const handleChapterClick = (chapter: Chapter) => {
         if (chapter.unlocked) {
-            router.push(`/quiz`)
+            router.push(`/quiz/?chapterId=${chapter.id}`)
         }
     }
 
@@ -53,7 +42,7 @@ export default function ChapterList({ chapters }: { chapters: Chapter[] }) {
                     <div className="relative">
                         <div className={`h-24 w-full ${chapter.unlocked ? "" : "filter grayscale opacity-50"}`}>
                             <Image
-                                src={chapter.image || "/placeholder.svg?height=96&width=384"}
+                                src={chapter.image}
                                 alt={chapter.title}
                                 fill
                                 className="object-cover"
@@ -61,7 +50,8 @@ export default function ChapterList({ chapters }: { chapters: Chapter[] }) {
                         </div>
 
                         {/* Level badge */}
-                        <div className="absolute top-2 left-2 bg-[#a73c1c] text-white px-2 py-1 rounded-md text-xs font-bold">
+                        <div
+                            className="absolute top-2 left-2 bg-[#a73c1c] text-white px-2 py-1 rounded-md text-xs font-bold">
                             Niveau {chapter.level}
                         </div>
 
@@ -69,12 +59,13 @@ export default function ChapterList({ chapters }: { chapters: Chapter[] }) {
                         {!chapter.unlocked ? (
                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
                                 <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center">
-                                    <Lock size={24} className="text-gray-400" />
+                                    <Lock size={24} className="text-gray-400"/>
                                 </div>
                             </div>
                         ) : chapter.completed ? (
-                            <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[#a73c1c] flex items-center justify-center">
-                                <Check size={16} className="text-white " />
+                            <div
+                                className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[#a73c1c] flex items-center justify-center">
+                                <Check size={16} className="text-white "/>
                             </div>
                         ) : null}
 
@@ -86,8 +77,8 @@ export default function ChapterList({ chapters }: { chapters: Chapter[] }) {
                                 {chapter.title}
                             </h3>
                             <span className={`text-sm ${chapter.unlocked ? "text-gray-300" : "text-gray-600"}`}>
-                {chapter.lessons} leçons
-              </span>
+                                {chapter.numberquestion} leçons
+                            </span>
                         </div>
 
                         <p className={`text-sm mb-3 ${chapter.unlocked ? "text-gray-400" : "text-gray-600"}`}>
@@ -99,9 +90,9 @@ export default function ChapterList({ chapters }: { chapters: Chapter[] }) {
                             <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
                                 <div
                                     className="h-full bg-gradient-to-r from-[#a73c1c]/30 to-[#a73c1c] transition-all duration-300"
-                                    style={{ width: `${chapter.progress}%` }}
+                                    style={{ width: `${chapter.completed ? 100 : (chapter.questionsFound / chapter.numberquestion) * 100}%` }}
                                     role="progressbar"
-                                    aria-valuenow={chapter.progress}
+                                    aria-valuenow={chapter.completed ? 100 : (chapter.questionsFound / chapter.numberquestion) * 100}
                                     aria-valuemin={0}
                                     aria-valuemax={100}
                                 />

@@ -83,7 +83,7 @@ export default function CultureQuiz({
 
                     {/* Bouton pour revoir l'introduction */}
                     <button onClick={() => setShowIntroduction(true)} className="text-sm text-[#a73c1c] mb-4 underline">
-                        Revoir l&#39;introduction
+                        Voir l&#39;introduction
                     </button>
 
                     <div className="space-y-3 mb-4">

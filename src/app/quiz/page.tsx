@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation"
 import { useSearchParams } from "next/navigation"
 import { getQuestionsByChapterId } from "@/Helper/chapterAndQuizHelper"
 import CultureQuiz from "@/app/quiz/quiztype/cultureQuiz"
+import { Suspense } from "react"
+import QuizSkeleton from "./loading-skeleton"
 
 type Option = {
     id: string
@@ -31,7 +33,7 @@ type Question =
 }
     | undefined
 
-export default function Quiz() {
+function QuizContent() {
     const searchParams = useSearchParams()
     const params = new URLSearchParams(searchParams)
 
@@ -97,5 +99,13 @@ export default function Quiz() {
                 )}
             </div>
         </div>
+    )
+}
+
+export default function Quiz() {
+    return (
+        <Suspense fallback={<QuizSkeleton />}>
+            <QuizContent />
+        </Suspense>
     )
 }

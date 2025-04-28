@@ -1,4 +1,4 @@
-import {Home,User} from "lucide-react";
+import {Home,User,Bot} from "lucide-react";
 import type React from "react";
 
 export default function Navigation() {
@@ -13,10 +13,19 @@ export default function Navigation() {
 
             <button className="flex flex-col items-center text-gray-500">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-1">
+                    <Bot size={20}/>
+                </div>
+                <span className="text-xs">Profil</span>
+            </button>
+
+            <button className="flex flex-col items-center text-gray-500">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-1">
                     <User size={20}/>
                 </div>
                 <span className="text-xs">Profil</span>
             </button>
+
+
 
         </div>
     )

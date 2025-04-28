@@ -47,9 +47,8 @@ export default function LoginPage() {
 
       // Redirection vers la page d'accueil après connexion
       router.push("/")
-    } catch (error: any) {
+    } catch (error) {
       console.error("Erreur de connexion:", error)
-      setError(error.message || "Une erreur est survenue lors de la connexion")
     } finally {
       setIsLoading(false)
     }

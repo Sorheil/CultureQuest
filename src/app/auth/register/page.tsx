@@ -59,9 +59,8 @@ export default function RegisterPage() {
 
             // Redirection vers la page d'accueil après inscription
             router.push("/")
-        } catch (error: any) {
+        } catch (error) {
             console.error("Erreur d'inscription:", error)
-            setError(error.message || "Une erreur est survenue lors de l'inscription")
         } finally {
             setIsLoading(false)
         }

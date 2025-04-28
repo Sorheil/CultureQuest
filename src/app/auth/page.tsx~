@@ -62,7 +62,7 @@ export default function RegisterOrLogin() {
         </motion.button>
 
         <motion.button
-            className=" text-[#a73c1c] dark:text-gray-400 underline mt-4 "
+            className=" text-[#a73c1c] dark:text-gray-400 underline "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
